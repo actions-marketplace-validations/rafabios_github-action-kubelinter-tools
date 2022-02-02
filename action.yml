@@ -1,0 +1,40 @@
+---
+name: damfle-github-action-kubelinter
+author: damfle
+description: Lint Kubernetes files
+
+# yamllint disable rule:line-length
+inputs:
+  file_or_dir:
+    description: file(s) or directory
+    required: true
+  enable_all:
+    description: AddAllBuiltIn, if set, adds all built-in checks, this allows users to explicitly opt-out of checks that are not relevant using exclude
+    required: false
+  config_file:
+    description: path to config file
+    required: false
+  no_defaults:
+    description: DoNotAutoAddDefaults, if set, prevents the automatic addition of default checks
+    required: false
+  exclude:
+    description: exclude is a list of check names to exclude
+    required: false
+  format:
+    description: output format allowed values json, plain, sarif. (default "plain")
+    required: false
+  include:
+    description: include is a list of check names to include, if a check is in both include and exclude, exclude wins
+    required: false
+  verbose:
+    description: enable verbose logging
+    required: false
+# yamllint enable rule:line-length
+
+runs:
+  using: docker
+  image: Dockerfile
+
+branding:
+  icon: check-circle
+  color: blue
