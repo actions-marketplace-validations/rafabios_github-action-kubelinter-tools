@@ -1,10 +1,10 @@
 FROM alpine:latest
 
 RUN apk --update --no-cache add curl unzip && \
-    curl -SsL https://github.com/stackrox/kube-linter/releases/latest/download/kube-linter-linux.zip --output /tmp/kube-linter-linux.zip && \
-    unzip /tmp/kube-linter-linux.zip -d /usr/bin/ && \
+    curl -SsL https://github.com/stackrox/kube-linter/releases/download/0.5.0/kube-linter-linux.tar.gz --output /tmp/kube-linter-linux.tar.gz && \
+    tar -zxvf /tmp/kube-linter-linux.tar.gz -d /usr/bin/ && \
     chmod +x /usr/bin/kube-linter && \
-    rm /tmp/kube-linter-linux.zip
+    rm  /tmp/kube-linter-linux.tar.gz
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
