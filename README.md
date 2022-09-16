@@ -5,7 +5,7 @@ Lint Kubernetes files with kube-linter. Simply and that's all.
 ## Usage
 
 ```yaml
-- uses: rafabios/github-action-kubelinter-tools@v1.0.2
+- uses: rafabios/github-action-kubelinter-tools@v1.0.3
   with:
     file_or_dir: ./
 ```
