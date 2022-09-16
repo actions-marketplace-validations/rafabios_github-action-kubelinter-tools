@@ -1,6 +1,6 @@
 ---
-name: damfle-github-action-kubelinter
-author: damfle
+name: rafabios-github-action-kubelinter-tools
+author: rafabios
 description: Lint Kubernetes files
 
 # yamllint disable rule:line-length
